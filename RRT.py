@@ -29,13 +29,43 @@ def RRT(start,goal,obstacle_list):
         new_node=(new_node_x,new_node_y)
         new_node=Node(new_node)
         new_node.parent=min_pos
-        list.append[new_node] #add new node to list
+        list.append[new_node]           #add new node to list
+        p.plot((new_node[0],nearest_node[0]),(new_node[1],nearest_node[1]))
+        p.show()
         d_x= new_node[0]-goal[0]
         d_y= new_node[1]-goal[1]
         d= math.sqrt(d_x**2 + d_y**2)
         if(d<=rate):
             print("goal reached")
             break;
+    end=len(list)-1
+    path=[goal]
+    while list[end].parent is not None:
+        path.append(list[end])
+        end=list[end].parent
+    path.append(start)
+    return path
 
+def visualize(path):
+    i=len(path)-2
+    p.plot((start[0],path[i][0]),(start[1],path[i][1]))
+    while(i>0):
+        p.plot((path[i][0],path[i-1][0]),(path[i][1],path[i-1][1]))
+        i=i-1
+        p.show()
+        
+def main():
+    obstacle_list = [
+            [(2, 10), (7, 10), (6, 7), (4, 7), (4, 9), (2, 9)],
+            [(3, 1), (3, 6), (4, 6), (4, 1)],
+            [(7, 3), (7, 8), (9, 8), (9, 3)],
+        ]
 
-def visualize(path,obstacle_list):
+    start = (1, 1)
+    goal = (10, 10)
+    path = RRT(start,goal)
+    visualize(path)
+    
+if __name__ == '__main__':
+    main()
+                                  
