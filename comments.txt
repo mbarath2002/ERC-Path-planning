@@ -1,0 +1,30 @@
+#all relevant libraries included
+#defining attributes of nodes generated, parent node is what each node in the list was previously generated from
+#bounds for random node generation
+#distance between node and prev node each time new one added
+#s as an object containing start node
+#scatter plot radius node 5, color red
+#random node generation
+          
+#calculating least distance from each node in list to find nearest node
+#taking that nodes position
+     
+#angle/direction of new node from nearest node 
+#point to check
+#coordinates defined
+#checking if node is inside the obstacle, line between 2 nodes intersect or if it touches the boundary of an obstacle
+#scatter of each new node
+#connnecting each newnode created with nearest
+#obj of new node to save attributes
+# node of each new node
+#we append this object to the node list
+#till we traverse through the entire array
+#starting from the last node we track its path by going through a chain of its parents till we reacg start
+  
+ #polygon set of points
+
+ #defining coordinates for polygon plotting
+
+
+ #display everything plotted
+#each of the functions called and values passed from the main function
